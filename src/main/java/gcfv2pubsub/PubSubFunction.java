@@ -88,7 +88,7 @@
       System.out.println("Formatted Expiration Time: " + formattedExpirationTime);
 
 
-      String verificationLink = "http://vaishnavimantri.me:8080/verify-email?token=" + ID ;
+      String verificationLink = "https://vaishnavimantri.me/verify-email?token=" + ID ;
       System.out.println("Verification Link: " + verificationLink);
 
       saveToDatabase(email, formattedExpirationTime,ID,formattedCurrentTime);
@@ -116,9 +116,9 @@
         PreparedStatement preparedStatement = conn.prepareStatement(insertSql);
 
 
-        preparedStatement.setString(1,formattedExpirationTime);  // Example ID value
-        preparedStatement.setString(2,formattedCurrentTime);  // Example verification_expiration value
-        preparedStatement.setString(3, id);  // Example user_name value
+        preparedStatement.setString(1,formattedExpirationTime);  
+        preparedStatement.setString(2,formattedCurrentTime); 
+        preparedStatement.setString(3, id);  
         preparedStatement.setString(4,email);
 
 
